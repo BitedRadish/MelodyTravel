@@ -32,7 +32,13 @@ export default function Home() {
             <SearchBar></SearchBar>
             <CardContainer>
                 {singersData.map((singer) => {
-                    return <Card id={singer.id} genre={singer.genre}></Card>;
+                    return (
+                        <Card
+                            key={singer.id}
+                            id={singer.id}
+                            genre={singer.genre}
+                        ></Card>
+                    );
                 })}
             </CardContainer>
         </PagePadding>
