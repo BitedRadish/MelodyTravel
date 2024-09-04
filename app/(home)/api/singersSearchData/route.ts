@@ -9,7 +9,6 @@ const dbConfig = {
     password: process.env.DB_PW,
     database: process.env.DB_DB,
 };
-console.log(dbConfig);
 
 // GET 요청을 처리하는 함수
 export async function GET(req: NextRequest) {
@@ -25,7 +24,6 @@ export async function GET(req: NextRequest) {
 
     try {
         const connection = await mysql.createConnection(dbConfig);
-        console.log(genre);
 
         const [rows] = await connection.execute<Singer[] & RowDataPacket[]>(
             `SELECT * FROM singers WHERE genre = ?`,
